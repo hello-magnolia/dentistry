@@ -49,6 +49,9 @@ html {
   scroll-padding-top: calc(var(--header-h) + 8px);
   -webkit-text-size-adjust: 100%;
 }
+/* While the scroll script runs it does the easing itself */
+html.lenis { scroll-behavior: auto; }
+html.lenis, html.lenis body { height: auto; }
 
 body {
   margin: 0;

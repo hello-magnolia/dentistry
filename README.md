@@ -20,6 +20,7 @@ To publish with GitHub Pages: Settings, Pages, deploy from the `main` branch, ro
 | `index.html` | All content, meta tags and the `Dentist` structured data |
 | `assets/css/site.css` | Styles. Colours and type are set as variables at the top |
 | `assets/js/site.js` | Menu, scroll reveals, open-now status, photo tour, reviews |
+| `assets/js/lenis.min.js` | Lenis 1.3.27 (MIT), eased wheel scrolling for mouse and trackpad. Delete its script tag in `index.html` to turn it off |
 | `assets/img/` | Photos (WebP) |
 | `assets/fonts/` | Marcellus and Hanken Grotesk, self-hosted (both SIL Open Font License) |
 | `llms.txt`, `robots.txt`, `sitemap.xml` | Search and AI crawler files |

@@ -69,6 +69,18 @@
     if (e.matches) setMenu(false);
   });
 
+  /* Eased wheel scrolling for mouse and trackpad. Touch keeps its native feel. */
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (window.Lenis && !reduceMotion && finePointer) {
+    new window.Lenis({
+      autoRaf: true,
+      anchors: true,
+      lerp: 0.12,
+      // Sideways gestures belong to the photo tour and the review shelf.
+      virtualScroll: ({ deltaX, deltaY }) => Math.abs(deltaY) >= Math.abs(deltaX),
+    });
+  }
+
   /* Reveal on scroll */
   const revealables = $$('[data-reveal]');
   if ('IntersectionObserver' in window && !reduceMotion) {
