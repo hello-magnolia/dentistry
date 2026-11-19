@@ -12,6 +12,7 @@
   const hero = $('.hero');
   const bust = $('[data-bust]');
   const drifters = $$('[data-drift]');
+  const dock = $('[data-dock]');
   let ticking = false;
 
   function onFrame() {
@@ -20,6 +21,7 @@
     const vh = window.innerHeight;
 
     header.classList.toggle('is-solid', y > 24);
+    if (dock) dock.classList.toggle('is-shown', y > 420 && !document.body.classList.contains('is-locked'));
 
     if (!reduceMotion) {
       if (bust && y < hero.offsetHeight) {
@@ -51,6 +53,7 @@
     toggle.setAttribute('aria-expanded', String(open));
     header.classList.toggle('is-open', open);
     document.body.classList.toggle('is-locked', open);
+    requestFrame();
   }
   toggle.addEventListener('click', () => setMenu(menu.hidden));
   menu.addEventListener('click', (e) => {

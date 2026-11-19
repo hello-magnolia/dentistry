@@ -23,6 +23,7 @@ To publish with GitHub Pages: Settings, Pages, deploy from the `main` branch, ro
 | `assets/img/` | Photos (WebP) |
 | `assets/fonts/` | Marcellus and Hanken Grotesk, self-hosted (both SIL Open Font License) |
 | `llms.txt`, `robots.txt`, `sitemap.xml` | Search and AI crawler files |
+| `contact.vcf` | The contact card behind "Save to contacts" |
 
 ## Where the content came from
 
@@ -37,9 +38,9 @@ because Google does not allow a business to mark up ratings collected on another
 
 ## Images
 
-- `office-*.webp`, `dr-sanchez.webp`, `nicholle-gilmour.webp`, `patient-miss-teen-california.webp`: real photos from the original site.
+- `office-*.webp`, `dr-sanchez.webp`, `nicholle-gilmour.webp`, `patient-miss-teen-california*.webp`: real photos from the original site.
   The office photos were enlarged with an AI upscaler because the originals are 800 pixels wide.
-- `niche-flowers.webp`, `feather.webp`, `family-toothbrushes.webp`, `ionic-column.webp`, `colonnade.webp`:
+- `niche-tooth.webp`, `feather.webp`, `family-toothbrushes.webp`, `ionic-column.webp`, `colonnade.webp`:
   decorative images generated with Higgsfield. They are not photos of the office or of patients.
 
 ## Before this replaces the live site
