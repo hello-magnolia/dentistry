@@ -30,11 +30,16 @@ All facts (hours, address, insurance plans, credentials, reviews) come from the 
 If hours change, update three places: the hours table in `index.html`, the `openingHoursSpecification`
 block in the page head, and the `HOURS` object in `assets/js/site.js`.
 
+The Google rating (5.0 across more than 350 reviews) was counted in November 2026 from the two Google
+listings: 220 under "Dr. Katherine D. Sanchez, D.D.S." and 135 under "Tracy Center For Dentistry".
+It appears in the hero, the reviews section and `llms.txt`. It is deliberately not in the structured data,
+because Google does not allow a business to mark up ratings collected on another site.
+
 ## Images
 
-- `office-*.webp`, `dr-sanchez.webp`, `nicholle-gilmour.webp`: real photos from the original site.
+- `office-*.webp`, `dr-sanchez.webp`, `nicholle-gilmour.webp`, `patient-miss-teen-california.webp`: real photos from the original site.
   The office photos were enlarged with an AI upscaler because the originals are 800 pixels wide.
-- `family-niche.webp`, `feather.webp`, `family-toothbrushes.webp`, `ionic-column.webp`, `colonnade.webp`:
+- `niche-flowers.webp`, `feather.webp`, `family-toothbrushes.webp`, `ionic-column.webp`, `colonnade.webp`:
   decorative images generated with Higgsfield. They are not photos of the office or of patients.
 
 ## Before this replaces the live site

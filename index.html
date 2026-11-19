@@ -6,7 +6,7 @@
   <title>Painless Family Dentist in Tracy, CA | Tracy Center for Dentistry</title>
   <meta name="description" content="Painless dentistry for the whole family in Tracy, CA. No shots for most procedures, kids welcome, open evenings and Saturdays. Dr. Katherine D. Sanchez, since 2006. Call (209) 221-8838.">
   <link rel="canonical" href="https://www.tracycenterfordentistry.com/">
-  <meta name="theme-color" content="#e0e0c9">
+  <meta name="theme-color" content="#e3e2c9">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Tracy Center for Dentistry">
@@ -22,7 +22,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/marcellus-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/hanken-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" href="assets/img/family-niche.webp" imagesrcset="assets/img/family-niche-720.webp 720w, assets/img/family-niche.webp 1080w" imagesizes="(max-width: 900px) 96vw, 610px">
+  <link rel="preload" as="image" href="assets/img/niche-flowers.webp" imagesrcset="assets/img/niche-flowers-720.webp 720w, assets/img/niche-flowers.webp 1080w" imagesizes="(max-width: 900px) 96vw, 610px">
   <link rel="stylesheet" href="assets/css/site.css">
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
 
@@ -85,6 +85,9 @@
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="star" viewBox="0 0 20 20"><path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L10 14.8l-5.2 2.8 1-5.8L1.5 7.7l5.9-.8z"/></symbol>
+  </svg>
 
   <header class="site-header" data-header>
     <a class="brand" href="#top" aria-label="Tracy Center for Dentistry, back to top">
@@ -157,19 +160,25 @@
             <li>Kids welcome</li>
             <li>Evenings and Saturdays</li>
           </ul>
-          <p class="status" data-status>
-            <span class="status__dot" aria-hidden="true"></span>
-            <span data-status-text>Tuesday to Friday 10 am to 7 pm, Saturday 10 am to 3 pm</span>
-          </p>
+          <div class="hero__meta">
+            <p class="status" data-status>
+              <span class="status__dot" aria-hidden="true"></span>
+              <span data-status-text>Tuesday to Friday 10 am to 7 pm, Saturday 10 am to 3 pm</span>
+            </p>
+            <a class="hero__rating" href="#patients" aria-label="Rated 5.0 on Google from more than 350 reviews">
+              <span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg></span>
+              <span>5.0 on Google, 350+ reviews</span>
+            </a>
+          </div>
         </div>
 
         <figure class="hero__niche" data-bust>
           <img
-            src="assets/img/family-niche.webp"
-            srcset="assets/img/family-niche-720.webp 720w, assets/img/family-niche.webp 1080w"
+            src="assets/img/niche-flowers.webp"
+            srcset="assets/img/niche-flowers-720.webp 720w, assets/img/niche-flowers.webp 1080w"
             sizes="(max-width: 900px) 96vw, 610px"
             width="1080" height="1368"
-            alt="A marble sculpture of a smiling mother with two laughing children, set in an arched wall niche"
+            alt="A bowl of fresh flowers on a small marble column, set in an arched wall niche"
             fetchpriority="high">
         </figure>
       </div>
@@ -342,6 +351,31 @@
       </div>
     </section>
 
+    <!-- Patient spotlight -->
+    <section class="crown" id="smiles">
+      <div class="wrap crown__grid">
+        <div class="crown__copy">
+          <h2>One of our patients became Miss&nbsp;Teen&nbsp;California.</h2>
+          <p class="crown__lede">She won Miss Teen Tracy, then Miss Teen San Joaquin County, and finally Miss Teen California United States in 2019. We are proud of her, and of that smile.</p>
+
+          <ol class="titles" data-reveal="titles">
+            <li>Miss Teen Tracy</li>
+            <li>Miss Teen San Joaquin County</li>
+            <li>Miss Teen California United States <span>2019</span></li>
+          </ol>
+        </div>
+
+        <figure class="crown__photo">
+          <div class="archway" data-reveal="arch">
+            <div class="arch">
+              <img src="assets/img/patient-miss-teen-california.webp" width="800" height="778" loading="lazy" alt="A smiling patient of the practice, a former Miss Teen California United States">
+            </div>
+          </div>
+          <figcaption>One of our actual patients</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <!-- Office tour -->
     <section class="tour" id="office">
       <div class="wrap">
@@ -434,7 +468,15 @@
     <!-- Patients -->
     <section class="voices" id="patients">
       <div class="wrap voices__grid">
-        <h2>In our patients&rsquo; words</h2>
+        <div class="voices__lead">
+          <h2>In our patients&rsquo; words</h2>
+          <div class="rating" data-reveal="rating">
+            <p class="rating__score" aria-label="Rated 5.0 out of 5 on Google">5.0</p>
+            <span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg></span>
+            <p class="rating__note">Average rating across more than 350 Google reviews.</p>
+            <a class="link" href="https://www.google.com/maps?cid=6623985831701287111" target="_blank" rel="noopener">Read our reviews on Google</a>
+          </div>
+        </div>
 
         <div class="voices__stage">
           <div class="quotes" data-quotes>
