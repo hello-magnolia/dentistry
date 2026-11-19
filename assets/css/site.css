@@ -1418,6 +1418,67 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
 .rating__note strong { font-weight: 700; color: var(--cypress); }
 .rating .link { grid-column: 1 / -1; justify-self: start; margin-top: 14px; }
 
+/* The toothbrush offer: a paper tag leaning on the niche, or a chip under the hero copy */
+.hero__niche { position: relative; }
+.gift { color: var(--cypress); text-decoration: none; background: var(--marble); }
+.gift .badge { background: var(--honey); }
+.gift__text { display: grid; gap: 4px; }
+.gift__title { font-family: var(--display); line-height: 1.12; }
+.gift__note { font-size: 0.9rem; line-height: 1.3; color: var(--muted); }
+.gift--tag {
+  position: absolute;
+  left: -12%;
+  bottom: 12%;
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  width: 168px;
+  padding: 26px 16px 20px;
+  border-radius: 999px 999px 16px 16px;
+  text-align: center;
+  box-shadow: 0 22px 44px -20px rgba(27, 42, 34, 0.5), 0 2px 6px rgba(27, 42, 34, 0.08);
+  transform: rotate(-5deg);
+  transform-origin: 50% 0;
+  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+}
+.gift--tag::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(169, 138, 78, 0.55);
+  border-radius: 999px 999px 11px 11px;
+  pointer-events: none;
+}
+.gift--tag .gift__title { font-size: 1.32rem; }
+.gift--tag .badge { width: 60px; height: 66px; }
+.gift--tag .badge .ico { width: 44px; height: 44px; transform: rotate(-24deg); }
+.gift--tag:hover, .gift--tag:focus-visible {
+  transform: rotate(0deg) translateY(-5px);
+  box-shadow: 0 30px 50px -22px rgba(27, 42, 34, 0.55), 0 2px 6px rgba(27, 42, 34, 0.08);
+}
+.gift--chip { display: none; }
+@keyframes tag-in { from { opacity: 0; transform: rotate(-17deg) translateY(12px); } }
+@media (prefers-reduced-motion: no-preference) {
+  .gift--tag { animation: tag-in 1.2s 1.9s var(--ease) backwards; }
+  .gift--chip { animation: settle 1s 1.5s var(--ease) both; }
+}
+@media (max-width: 1100px) {
+  .gift--tag { display: none; }
+  .gift--chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 22px;
+    padding: 10px 22px 10px 12px;
+    border-radius: 16px;
+    box-shadow: 0 0 0 1px rgba(169, 138, 78, 0.4);
+  }
+  .gift--chip .badge { width: 44px; height: 50px; }
+  .gift--chip .badge .ico { width: 32px; height: 32px; transform: rotate(-24deg); }
+  .gift--chip .gift__text { gap: 1px; }
+  .gift--chip .gift__title { font-size: 1.2rem; }
+}
+
 /* Review cards: a sideways shelf, two to a column, each as long as the review */
 .voices__stage { min-width: 0; }
 .reviews {
