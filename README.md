@@ -34,8 +34,8 @@ block in the page head, and the `HOURS` object in `assets/js/site.js`.
 
 - `office-*.webp`, `dr-sanchez.webp`, `nicholle-gilmour.webp`: real photos from the original site.
   The office photos were enlarged with an AI upscaler because the originals are 800 pixels wide.
-- `niche-bust.webp`, `ionic-column.webp`, `colonnade.webp`: decorative images generated with Higgsfield.
-  They are not photos of the office.
+- `family-niche.webp`, `feather.webp`, `family-toothbrushes.webp`, `ionic-column.webp`, `colonnade.webp`:
+  decorative images generated with Higgsfield. They are not photos of the office or of patients.
 
 ## Before this replaces the live site
 

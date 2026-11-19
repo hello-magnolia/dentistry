@@ -62,7 +62,7 @@
       toggle.focus();
     }
   });
-  window.matchMedia('(min-width: 1081px)').addEventListener('change', (e) => {
+  window.matchMedia('(min-width: 1181px)').addEventListener('change', (e) => {
     if (e.matches) setMenu(false);
   });
 
