@@ -33,7 +33,7 @@ block in the page head, and the `HOURS` object in `assets/js/site.js`.
 
 The Google rating (5.0 across more than 350 reviews) was counted in November 2026 from the two Google
 listings: 220 under "Dr. Katherine D. Sanchez, D.D.S." and 135 under "Tracy Center For Dentistry".
-It appears in the hero, the reviews section and `llms.txt`. It is deliberately not in the structured data,
+It appears in the banner under the hero and in `llms.txt`. It is deliberately not in the structured data,
 because Google does not allow a business to mark up ratings collected on another site.
 
 Profiles checked on November 19, 2026: only Google and Yelp are linked. The Facebook page is not publicly

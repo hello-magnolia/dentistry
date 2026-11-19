@@ -72,7 +72,8 @@
     "paymentAccepted": "Cash, Check, Visa, Mastercard, Discover, American Express",
     "medicalSpecialty": "Dentistry",
     "availableService": [
-      { "@type": "MedicalProcedure", "name": "Dental cleanings and exams" },
+      { "@type": "MedicalProcedure", "name": "Dental exams" },
+      { "@type": "MedicalProcedure", "name": "Professional teeth cleaning" },
       { "@type": "MedicalProcedure", "name": "Dental fillings" },
       { "@type": "MedicalProcedure", "name": "Dental crowns" },
       { "@type": "MedicalProcedure", "name": "Teeth whitening" },
@@ -182,10 +183,6 @@
               <span class="status__dot" aria-hidden="true"></span>
               <span data-status-text>Tuesday to Friday 10 am to 7 pm, Saturday 10 am to 3 pm</span>
             </p>
-            <a class="hero__rating" href="#patients" aria-label="Rated 5.0 on Google from more than 350 reviews">
-              <span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg></span>
-              <span>5.0 on Google, 350+ reviews</span>
-            </a>
             <a class="hero__place" href="#visit">
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 18s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10Z"/><circle cx="10" cy="8" r="2.2"/></svg>
               <span>2643 Naglee Road, Tracy</span>
@@ -204,6 +201,15 @@
         </figure>
       </div>
     </section>
+
+    <!-- Google rating -->
+    <aside class="acclaim" aria-label="Google rating">
+      <div class="wrap acclaim__row">
+        <p class="acclaim__score"><span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg></span><span><strong>5.0</strong> on Google</span></p>
+        <p class="acclaim__note">Rated by more than 350 patients</p>
+        <a class="link link--light" href="https://www.google.com/maps?cid=6623985831701287111" target="_blank" rel="noopener">Read the reviews</a>
+      </div>
+    </aside>
 
     <!-- Pain-free -->
     <section class="painless" id="painless">
@@ -312,30 +318,30 @@
         </ul>
 
         <h3 class="cover__sub">Plans we work with</h3>
-        <ul class="plans" data-reveal="plans">
-          <li style="--i:0"><span class="plans__mark" aria-hidden="true">DD</span><span>Delta Dental<small>Premier and PPO</small></span></li>
-          <li style="--i:1"><span class="plans__mark" aria-hidden="true">Ae</span><span>Aetna</span></li>
-          <li style="--i:2"><span class="plans__mark" aria-hidden="true">AIG</span><span>AIG</span></li>
-          <li style="--i:3"><span class="plans__mark" aria-hidden="true">Am</span><span>Ameritas</span></li>
-          <li style="--i:4"><span class="plans__mark" aria-hidden="true">AB</span><span>Anthem Blue Cross</span></li>
-          <li style="--i:5"><span class="plans__mark" aria-hidden="true">As</span><span>Assurant</span></li>
-          <li style="--i:6"><span class="plans__mark" aria-hidden="true">BS</span><span>Blue Shield</span></li>
-          <li style="--i:7"><span class="plans__mark" aria-hidden="true">Ca</span><span>Careington</span></li>
-          <li style="--i:8"><span class="plans__mark" aria-hidden="true">Ci</span><span>Cigna</span></li>
-          <li style="--i:9"><span class="plans__mark" aria-hidden="true">CD</span><span>Connection Dental</span></li>
-          <li style="--i:10"><span class="plans__mark" aria-hidden="true">De</span><span>Dentegra</span></li>
-          <li style="--i:11"><span class="plans__mark" aria-hidden="true">DM</span><span>DenteMax</span></li>
-          <li style="--i:12"><span class="plans__mark" aria-hidden="true">FD</span><span>First Dental Health</span></li>
-          <li style="--i:13"><span class="plans__mark" aria-hidden="true">Gu</span><span>Guardian</span></li>
-          <li style="--i:14"><span class="plans__mark" aria-hidden="true">Hu</span><span>Humana</span></li>
-          <li style="--i:15"><span class="plans__mark" aria-hidden="true">In</span><span>Interplan</span></li>
-          <li style="--i:16"><span class="plans__mark" aria-hidden="true">ML</span><span>MetLife</span></li>
-          <li style="--i:17"><span class="plans__mark" aria-hidden="true">PA</span><span>Premier Access</span></li>
-          <li style="--i:18"><span class="plans__mark" aria-hidden="true">Pr</span><span>Principal</span></li>
-          <li style="--i:19"><span class="plans__mark" aria-hidden="true">UC</span><span>United Concordia</span></li>
-          <li style="--i:20"><span class="plans__mark" aria-hidden="true">UH</span><span>UnitedHealthcare</span></li>
-          <li class="plans__more" style="--i:21"><span class="plans__mark" aria-hidden="true">+</span><span>Other plans<small>Call us to check</small></span></li>
+        <ul class="plans">
+          <li>Aetna</li>
+          <li>AIG</li>
+          <li>Ameritas</li>
+          <li>Anthem Blue Cross</li>
+          <li>Assurant</li>
+          <li>Blue Shield</li>
+          <li>Careington</li>
+          <li>Cigna</li>
+          <li>Connection Dental</li>
+          <li>Delta Dental <small>Premier and PPO</small></li>
+          <li>Dentegra</li>
+          <li>DenteMax</li>
+          <li>First Dental Health</li>
+          <li>Guardian</li>
+          <li>Humana</li>
+          <li>Interplan</li>
+          <li>MetLife</li>
+          <li>Premier Access</li>
+          <li>Principal</li>
+          <li>United Concordia</li>
+          <li>UnitedHealthcare</li>
         </ul>
+        <p class="plans__more">Don&rsquo;t see yours? Call <a href="tel:+12092218838">(209) 221-8838</a> and we&rsquo;ll check.</p>
 
         <div class="pay">
           <div>
@@ -370,26 +376,26 @@
         </div>
 
         <div class="doctor__copy">
-          <h2>Dr. Katherine D. Sanchez</h2>
-          <p class="lede">Gentle, exacting, and a sculptor at heart.</p>
-          <p>She founded the practice in 2006 and treats every crown and filling like a small sculpture: precise, delicate work, done by hand.</p>
+          <h2>Dr. Katherine D. Sanchez, DDS</h2>
+          <p class="lede">Founder, Tracy Center for Dentistry</p>
+          <p>Dr. Sanchez has practiced general and cosmetic dentistry in Tracy since founding the practice in 2006. She is a graduate of the Arthur A. Dugoni School of Dentistry at the University of the Pacific and is known for precise restorative work and a gentle chairside manner.</p>
 
           <dl class="creds">
             <div>
-              <dt>Dental degree</dt>
-              <dd>Arthur A. Dugoni School of Dentistry, University of the Pacific</dd>
+              <dt>Education</dt>
+              <dd>Doctor of Dental Surgery, Arthur A. Dugoni School of Dentistry, University of the Pacific<br>B.S. in Biology, minor in Chemistry, San Jose State University</dd>
             </div>
             <div>
-              <dt>Member of</dt>
-              <dd>American Dental Association, California Dental Association, San Joaquin County and Santa Clara County Dental Societies</dd>
+              <dt>Licensure</dt>
+              <dd>Dental Board of California, license no. 45185</dd>
             </div>
             <div>
-              <dt>Trusted by</dt>
-              <dd>Other dentists, dental laboratory technicians and physicians</dd>
+              <dt>Memberships</dt>
+              <dd>American Dental Association<br>California Dental Association<br>San Joaquin County Dental Society<br>Santa Clara County Dental Society</dd>
             </div>
             <div>
-              <dt>Rated</dt>
-              <dd>The Better Business Bureau&rsquo;s highest rating</dd>
+              <dt>Recognition</dt>
+              <dd>Highest rating from the Better Business Bureau</dd>
             </div>
           </dl>
         </div>
@@ -487,56 +493,48 @@
       </div>
       <div class="wrap">
         <header class="head">
-          <h2>Care for the whole family</h2>
-          <p>General and cosmetic dentistry under one roof.</p>
+          <h2>Cleanings, crowns, implants and everything between.</h2>
+          <p>General and cosmetic dentistry for children and adults.</p>
         </header>
 
-        <ul class="services">
-          <li>
-            <span class="badge"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tooth"/></svg></span>
+        <div class="menu-care">
+          <section class="menu-care__row">
+            <h3>Preventive care</h3>
             <div>
-              <h3>Cleanings and exams</h3>
-              <p>Checkups and cleanings twice a year.</p>
+              <ul class="treats">
+                <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clipboard"/></svg>Exams</li>
+                <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tooth"/></svg>Professional cleanings</li>
+              </ul>
+              <p>Checkups at least twice a year, and a free year&rsquo;s supply of toothbrushes.</p>
             </div>
-          </li>
-          <li>
-            <span class="badge"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-filling"/></svg></span>
+          </section>
+          <section class="menu-care__row">
+            <h3>Restorative care</h3>
             <div>
-              <h3>Fillings</h3>
-              <p>Carefully carved, then shown to you.</p>
+              <ul class="treats">
+                <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-filling"/></svg>Fillings</li>
+                <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-crown"/></svg>Crowns</li>
+                <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-implant"/></svg>Implants</li>
+              </ul>
+              <p>No shots for most procedures, and you see every crown and filling when it is done.</p>
             </div>
-          </li>
-          <li>
-            <span class="badge"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-crown"/></svg></span>
+          </section>
+          <section class="menu-care__row">
+            <h3>Cosmetic care</h3>
             <div>
-              <h3>Crowns</h3>
-              <p>Strength and shape for a damaged tooth.</p>
+              <ul class="treats">
+                <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sparkle"/></svg>Teeth whitening</li>
+                <li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-smile"/></svg>Veneers</li>
+              </ul>
+              <p>Shaped by hand, by a dentist who treats each tooth as a small sculpture.</p>
             </div>
-          </li>
-          <li>
-            <span class="badge"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sparkle"/></svg></span>
-            <div>
-              <h3>Whitening and veneers</h3>
-              <p>A brighter, more even smile.</p>
-            </div>
-          </li>
-          <li>
-            <span class="badge"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-implant"/></svg></span>
-            <div>
-              <h3>Implants</h3>
-              <p>A lasting fix for missing teeth.</p>
-            </div>
-          </li>
-          <li>
-            <span class="badge"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-smile"/></svg></span>
-            <div>
-              <h3>Children&rsquo;s dentistry</h3>
-              <p>Kids are welcome.</p>
-            </div>
-          </li>
-        </ul>
+          </section>
+        </div>
 
-        <p class="care__note">Need a specialist? We refer you to one we trust.</p>
+        <p class="care__cta">
+          <a class="btn btn--dark" href="tel:+12092218838">Call (209) 221-8838</a>
+          <span>Not sure what you need? Start with an exam. If you need a specialist, we refer you to one we trust.</span>
+        </p>
       </div>
     </section>
 
@@ -584,12 +582,6 @@
       <div class="wrap voices__grid">
         <div class="voices__lead">
           <h2>In our patients&rsquo; words</h2>
-          <div class="rating" data-reveal="rating">
-            <p class="rating__score" aria-label="Rated 5.0 out of 5 on Google">5.0</p>
-            <span class="stars" aria-hidden="true"><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg><svg viewBox="0 0 20 20"><use href="#star"/></svg></span>
-            <p class="rating__note">Average rating across more than 350 Google reviews.</p>
-            <a class="link" href="https://www.google.com/maps?cid=6623985831701287111" target="_blank" rel="noopener">Read our reviews on Google</a>
-          </div>
         </div>
 
         <div class="voices__stage">
