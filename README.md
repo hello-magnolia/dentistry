@@ -36,6 +36,10 @@ listings: 220 under "Dr. Katherine D. Sanchez, D.D.S." and 135 under "Tracy Cent
 It appears in the hero, the reviews section and `llms.txt`. It is deliberately not in the structured data,
 because Google does not allow a business to mark up ratings collected on another site.
 
+Profiles checked on November 19, 2026: only Google and Yelp are linked. The Facebook page is not publicly
+visible, the YouTube channel has no videos, the X account has never posted, and LinkedIn is the dentist's
+personal profile (kept in the structured data only). Add them back in `index.html` if they come to life.
+
 ## Images
 
 - `office-*.webp`, `dr-sanchez.webp`, `nicholle-gilmour.webp`, `patient-miss-teen-california*.webp`: real photos from the original site.
