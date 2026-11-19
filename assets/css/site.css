@@ -626,7 +626,7 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
 .tour__track.is-dragging img { pointer-events: none; }
 .tour__item {
   flex: none;
-  width: min(84vw, 820px);
+  width: min(84vw, 640px);
   margin: 0;
   scroll-snap-align: start;
 }
@@ -1183,23 +1183,27 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
 .js [data-reveal="titles"].is-in li:nth-child(2)::after { transition-delay: 0.9s; }
 .js [data-reveal="titles"].is-in li:nth-child(3)::before { transition-delay: 1.4s; }
 
-.crown__photos {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
-  gap: 0 clamp(18px, 2.4vw, 34px);
+.crown__photos { width: 100%; max-width: 500px; margin: 0; justify-self: end; }
+.crown__frame { position: relative; padding: 0 13% 9% 0; }
+.crown__main { aspect-ratio: 1 / 1; overflow: hidden; border-radius: 26px; background: var(--sage); }
+.crown__main img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.crown__photos .archway--stage {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 39%;
+  max-width: none;
   margin: 0;
+  padding: 9px 9px 0;
+  border-radius: 999px 999px 0 0;
+  background: var(--wall);
 }
-.crown__photos .archway { max-width: none; }
-.crown__photos .archway--stage { margin-top: clamp(40px, 5vw, 76px); }
-.crown__photos .arch img { object-position: 44% 30%; }
 .crown__photos .archway--stage .arch img { object-position: 50% 34%; }
-.js .crown__photos .archway--stage[data-reveal="arch"].is-in .arch { transition-delay: 0.45s; }
-.crown__photos figcaption { grid-column: 1 / -1; margin-top: 18px; color: var(--muted); font-size: 0.98rem; }
+.crown__photos figcaption { margin-top: 16px; color: var(--muted); font-size: 0.98rem; }
 
 @media (max-width: 900px) {
   .crown__grid { grid-template-columns: minmax(0, 1fr); }
-  .crown__photos { max-width: 520px; }
+  .crown__photos { max-width: 440px; justify-self: start; }
   .crown__photos .archway { margin-inline: 0; }
 }
 @media (max-width: 560px) {
@@ -1370,16 +1374,17 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
 .creds .inline span, .visit__address address span { display: block; }
 
 /* Care: grouped treatments */
-.menu-care { max-width: 760px; margin-top: clamp(36px, 4.6vw, 64px); border-top: 1px solid rgba(27, 42, 34, 0.32); }
-.menu-care__row {
+.menu-care {
   display: grid;
-  grid-template-columns: 11.5rem minmax(0, 1fr);
-  gap: 12px 28px;
-  padding-block: clamp(22px, 2.6vw, 32px);
-  border-bottom: 1px solid rgba(27, 42, 34, 0.32);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 32px);
+  max-width: 760px;
+  margin-top: clamp(28px, 3.4vw, 44px);
 }
-.menu-care__row h3 { font-size: 1.45rem; }
-.menu-care__row p { margin: 14px 0 0; color: #2a372f; }
+.menu-care__col { padding-top: 18px; border-top: 1px solid rgba(27, 42, 34, 0.32); }
+.menu-care__col h3 { margin-bottom: 14px; font-size: 1.4rem; }
+.menu-care__col p { margin: 14px 0 0; color: #2a372f; font-size: 0.98rem; }
+.menu-care .treats { flex-direction: column; align-items: flex-start; }
 .treats { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
 .treats li {
   display: inline-flex;
@@ -1405,7 +1410,10 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
 .btn--dark:hover { background: #26392f; }
 
 @media (max-width: 560px) {
-  .menu-care__row { grid-template-columns: minmax(0, 1fr); }
+  .menu-care { grid-template-columns: minmax(0, 1fr); }
+  .menu-care .treats { flex-direction: row; }
+  .menu-care__col h3 { margin-bottom: 10px; }
+  .menu-care__col p { margin-top: 10px; }
 }
 
 /* Reviews: compact, directly under the hero */
@@ -1422,7 +1430,8 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
 }
 .rating__score { grid-row: span 2; font-size: clamp(3.4rem, 5.6vw, 4.8rem); }
 .rating .stars { align-self: end; margin-top: 0; font-size: 1.4rem; }
-.rating__note { grid-column: 2; align-self: start; max-width: none; margin: 6px 0 0; font-size: 0.95rem; }
+.rating__note { grid-column: 2; align-self: start; max-width: none; margin: 6px 0 0; font-size: 0.98rem; }
+.rating__note strong { font-weight: 700; color: var(--cypress); }
 .rating .link { grid-column: 1 / -1; justify-self: start; margin-top: 14px; }
 .voices .quote p { font-size: clamp(1.4rem, 2.5vw, 2.15rem); }
 .voices .quote figcaption { margin-top: 1rem; }
@@ -1584,15 +1593,14 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
   .team__quote footer { margin-top: 0.5rem; }
 
   /* Miss Teen California */
-  .crown__photos { max-width: 590px; justify-self: end; }
-  .crown__photos .archway--stage { margin-top: 34px; }
+  .crown__photos { max-width: 400px; }
   .crown__photos figcaption { margin-top: 12px; }
   .titles { margin-top: 30px; }
 
   /* Office tour: controls move up beside the heading */
   .tour { position: relative; }
   .tour__track { margin-top: 28px; }
-  .tour__item { width: min(56vw, 560px); }
+  .tour__item { width: min(46vw, 460px); }
   .tour__item figcaption { margin-top: 10px; font-size: 1.05rem; }
   .tour__controls {
     position: absolute;
@@ -1605,11 +1613,10 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
   .tour .round { width: 44px; height: 44px; }
 
   /* Care */
-  .care h2 { max-width: 30rem; font-size: clamp(1.9rem, 2.8vw, 2.45rem); }
-  .menu-care { margin-top: 24px; }
-  .menu-care__row { grid-template-columns: 10rem minmax(0, 1fr); padding-block: 15px; }
-  .menu-care__row h3 { font-size: 1.28rem; }
-  .menu-care__row p { margin-top: 8px; font-size: 0.97rem; }
+  .menu-care { margin-top: 22px; }
+  .menu-care__col { padding-top: 14px; }
+  .menu-care__col h3 { margin-bottom: 10px; font-size: 1.28rem; }
+  .menu-care__col p { margin-top: 10px; font-size: 0.95rem; }
   .treats li { padding: 0.36em 0.9em 0.36em 0.6em; font-size: 0.95rem; }
   .care__cta { margin-top: 18px; font-size: 0.97rem; }
 

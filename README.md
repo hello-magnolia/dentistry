@@ -32,7 +32,8 @@ If hours change, update three places: the hours table in `index.html`, the `open
 block in the page head, and the `HOURS` object in `assets/js/site.js`.
 
 The Google rating (5.0 across more than 350 reviews) was counted in November 2026 from the two Google
-listings: 220 under "Dr. Katherine D. Sanchez, D.D.S." and 135 under "Tracy Center For Dentistry".
+listings: 221 under "Dr. Katherine D. Sanchez, D.D.S." and 136 under "Tracy Center For Dentistry".
+Seven of the rotating quotes are short excerpts from those Google reviews, marked "on Google".
 It appears in the hero, the reviews section and `llms.txt`. It is deliberately not in the structured data,
 because Google does not allow a business to mark up ratings collected on another site.
 
