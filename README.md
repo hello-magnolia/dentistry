@@ -33,7 +33,7 @@ block in the page head, and the `HOURS` object in `assets/js/site.js`.
 
 The Google rating (5.0 across more than 350 reviews) was counted in November 2026 from the two Google
 listings: 221 under "Dr. Katherine D. Sanchez, D.D.S." and 136 under "Tracy Center For Dentistry".
-All ten rotating quotes are short excerpts from five-star reviews on those listings, marked "on Google".
+The twelve review cards come from five-star reviews on the first listing. Six are short reviews shown whole. Six are excerpts from longer reviews, marked with an ellipsis and a "More" link to Google.
 It appears in the hero, the reviews section and `llms.txt`. It is deliberately not in the structured data,
 because Google does not allow a business to mark up ratings collected on another site.
 

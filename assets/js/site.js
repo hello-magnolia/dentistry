@@ -205,45 +205,53 @@
     sync();
   }
 
-  /* Patient quotes */
-  const quotesRoot = $('[data-quotes]');
-  const quotesNav = $('[data-quotes-nav]');
-  if (quotesRoot && quotesNav) {
-    const quotes = $$('.quote', quotesRoot);
-    const current = $('[data-quotes-current]');
-    $('[data-quotes-total]').textContent = String(quotes.length);
-    quotesNav.hidden = false;
-    let index = 0;
-    let timer = null;
-
-    const show = (i, announce) => {
-      index = (i + quotes.length) % quotes.length;
-      quotes.forEach((q, n) => {
-        q.classList.toggle('is-active', n === index);
-        q.setAttribute('aria-hidden', String(n !== index));
-      });
-      current.textContent = String(index + 1);
-      quotesRoot.setAttribute('aria-live', announce ? 'polite' : 'off');
+  /* Review shelf */
+  const shelf = $('[data-reviews]');
+  const shelfNav = $('[data-reviews-nav]');
+  if (shelf && shelfNav) {
+    const cols = $$('.reviews__col', shelf);
+    const prev = $('[data-reviews-prev]');
+    const next = $('[data-reviews-next]');
+    const step = () => (cols.length > 1 ? cols[1].offsetLeft - cols[0].offsetLeft : shelf.clientWidth);
+    const move = (dir) => shelf.scrollBy({ left: dir * step(), behavior: reduceMotion ? 'auto' : 'smooth' });
+    const sync = () => {
+      const atEnd = shelf.scrollLeft >= shelf.scrollWidth - shelf.clientWidth - 4;
+      prev.disabled = shelf.scrollLeft < 4;
+      next.disabled = atEnd;
+      shelf.classList.toggle('is-end', atEnd);
+      shelfNav.hidden = shelf.scrollWidth <= shelf.clientWidth + 4;
     };
-    const stop = () => { window.clearInterval(timer); timer = null; };
-    const start = () => {
-      if (reduceMotion || timer) return;
-      timer = window.setInterval(() => show(index + 1, false), 7000);
-    };
+    prev.addEventListener('click', () => move(-1));
+    next.addEventListener('click', () => move(1));
+    shelf.addEventListener('scroll', () => window.requestAnimationFrame(sync), { passive: true });
+    window.addEventListener('resize', sync);
+    shelf.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); move(1); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); move(-1); }
+    });
 
-    $('[data-quotes-prev]').addEventListener('click', () => { stop(); show(index - 1, true); });
-    $('[data-quotes-next]').addEventListener('click', () => { stop(); show(index + 1, true); });
-    const stage = quotesRoot.parentElement;
-    stage.addEventListener('pointerenter', stop);
-    stage.addEventListener('pointerleave', start);
-    stage.addEventListener('focusin', stop);
-
-    show(0, false);
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(([entry]) => (entry.isIntersecting ? start() : stop()), { threshold: 0.4 }).observe(stage);
-    } else {
-      start();
-    }
+    // Mouse drag. Touch and trackpads already scroll natively.
+    let pull = null;
+    shelf.addEventListener('pointerdown', (e) => {
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      pull = { x: e.clientX, left: shelf.scrollLeft, moved: false };
+    });
+    window.addEventListener('pointermove', (e) => {
+      if (!pull) return;
+      const dx = e.clientX - pull.x;
+      if (!pull.moved && Math.abs(dx) > 4) {
+        pull.moved = true;
+        shelf.classList.add('is-dragging');
+      }
+      if (pull.moved) shelf.scrollLeft = pull.left - dx;
+    });
+    window.addEventListener('pointerup', () => {
+      if (!pull) return;
+      const moved = pull.moved;
+      pull = null;
+      if (moved) window.setTimeout(() => shelf.classList.remove('is-dragging'), 0);
+    });
+    sync();
   }
 
   /* Highlight the section you are in */
