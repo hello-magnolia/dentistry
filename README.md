@@ -70,6 +70,11 @@ Things the checks rely on, worth keeping when you edit:
 
 ## Before this replaces the live site
 
+- **Remove the staging `noindex`.** `index.html` carries `<meta name="robots" content="noindex, nofollow">` so the
+  GitHub Pages demo stays out of search engines. On launch day swap it for the line given in the comment above it.
+  `robots.txt` is already the production version: it has no effect on the GitHub Pages address, because
+  crawlers only read `robots.txt` at the root of a host.
+
 - The canonical URL, sitemap, social image and `llms.txt` links all point at `www.tracycenterfordentistry.com`.
   That also tells search engines the GitHub Pages copy is a duplicate of the real site, not a rival.
 - Update `<lastmod>` in `sitemap.xml` whenever the content changes.
