@@ -71,7 +71,7 @@ Things the checks rely on, worth keeping when you edit:
 ## Before this replaces the live site
 
 - **Remove the staging `noindex`.** `index.html` carries `<meta name="robots" content="noindex, nofollow">` so the
-  GitHub Pages demo stays out of search engines. On launch day swap it for the line given in the comment above it.
+  GitHub Pages demo stays out of search engines. On launch day change its content to `index, follow, max-image-preview:large`.
   `robots.txt` is already the production version: it has no effect on the GitHub Pages address, because
   crawlers only read `robots.txt` at the root of a host.
 
