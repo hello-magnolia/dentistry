@@ -48,6 +48,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 8px);
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  color-scheme: light;
 }
 /* While the scroll script runs it does the easing itself */
 html.lenis { scroll-behavior: auto; }
@@ -82,10 +84,29 @@ h2 {
 h3 { font-size: 1.4rem; line-height: 1.22; }
 
 :focus-visible {
-  outline: 2px solid var(--brass);
+  outline: 2px solid var(--focus, var(--cypress));
   outline-offset: 3px;
   border-radius: 2px;
 }
+/* Dark sections switch the ring to honey; light panels inside them switch back */
+.doctor, .tour, .visit, .site-footer, .dock { --focus: var(--honey); }
+.visit .map { --focus: var(--cypress); }
+
+/* Read by screen readers, not shown */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Phone numbers stay on one line */
+a[href^="tel:"] { white-space: nowrap; }
 
 .wrap {
   width: 100%;
@@ -162,7 +183,6 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
   transition: transform 0.45s var(--ease);
 }
 .link:hover::after { transform: scaleX(0.35); }
-.link--light { color: var(--marble); }
 
 .round {
   display: grid;
@@ -247,7 +267,7 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
   transform-origin: left;
   transition: transform 0.4s var(--ease);
 }
-.nav a:hover::after, .nav a[aria-current="true"]::after { transform: scaleX(1); }
+.nav a:hover::after, .nav a[aria-current]::after { transform: scaleX(1); }
 
 .menu-toggle {
   display: none;
@@ -591,19 +611,6 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
   text-wrap: balance;
 }
 .team__quote footer { margin-top: 1.2rem; color: var(--muted); }
-.team__member { display: flex; align-items: flex-end; gap: 22px; margin: 0; }
-.team__member img {
-  flex: none;
-  width: 132px;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: 50% 12%;
-  border-radius: 999px 999px 0 0;
-}
-.team__member figcaption { display: grid; gap: 2px; padding-bottom: 4px; }
-.team__member strong { font-family: var(--display); font-weight: 400; font-size: 1.3rem; }
-.team__member span { color: var(--muted); font-size: 0.98rem; }
-.team__member .team__note { margin-top: 0.6rem; max-width: 19rem; }
 
 /* Office tour */
 .tour {
@@ -671,7 +678,7 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
   overflow: hidden;
 }
 .care .wrap { position: relative; }
-.care .head p { color: #33423a; }
+.care .head p { color: #26332b; }
 .care__art {
   --p: 0;
   position: absolute;
@@ -690,18 +697,6 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
   transform: translate3d(0, calc(var(--p) * -36px), 0) scale(1.06);
   will-change: transform;
 }
-.services {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 clamp(24px, 4vw, 64px);
-  max-width: 760px;
-  margin: clamp(40px, 5vw, 72px) 0 0;
-  padding: 0;
-  list-style: none;
-}
-.services li { padding-block: 1.35rem; border-top: 1px solid rgba(27, 42, 34, 0.32); }
-.services p { margin: 0.45em 0 0; color: #2f3d35; font-size: 1rem; line-height: 1.5; }
-.care__note { max-width: 760px; margin: 0; padding-top: 1.35rem; border-top: 1px solid rgba(27, 42, 34, 0.32); color: #2f3d35; }
 
 /* Patients */
 .voices { padding-block: var(--section); background: var(--celadon); }
@@ -995,13 +990,6 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
 }
 .families__art .arch { background: var(--wall); }
 .families__art .arch img { object-position: 50% 64%; }
-.families__lede {
-  max-width: 34rem;
-  margin: 1.3rem 0 0;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  color: var(--muted);
-}
 .perks {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1208,8 +1196,8 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
 .doctor .doctor__copy .lede { color: #ecd9a8; }
 .doctor .doctor__copy p { color: rgba(248, 248, 244, 0.9); }
 .doctor .creds, .doctor .creds div { border-color: rgba(248, 248, 244, 0.24); }
-.doctor .creds dt { color: rgba(248, 248, 244, 0.72); }
-.doctor .team__quote footer { color: rgba(248, 248, 244, 0.74); }
+.doctor .creds dt { color: rgba(248, 248, 244, 0.82); }
+.doctor .team__quote footer { color: rgba(248, 248, 244, 0.82); }
 
 /* Hero address */
 .hero__place {
@@ -1296,9 +1284,10 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
     box-shadow: 0 12px 30px rgba(18, 28, 22, 0.3);
     color: var(--marble);
     transform: translateY(160%);
-    transition: transform 0.5s var(--ease);
+    visibility: hidden;
+    transition: transform 0.5s var(--ease), visibility 0s 0.5s;
   }
-  .dock.is-shown { transform: none; }
+  .dock.is-shown { transform: none; visibility: visible; transition: transform 0.5s var(--ease), visibility 0s; }
   .dock a {
     display: flex;
     align-items: center;
@@ -1339,11 +1328,6 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
 .perks p { margin-top: 0.3em; }
 .families .perks { margin-top: clamp(28px, 3.4vw, 44px); }
 
-.services { gap: clamp(22px, 2.6vw, 34px) clamp(24px, 4vw, 56px); }
-.services li { display: flex; align-items: flex-start; gap: 16px; padding-block: 0; border-top: 0; }
-.services .badge { background: var(--marble); }
-.services p { margin-top: 0.3em; }
-.care .care__note { margin-top: clamp(26px, 3vw, 38px); padding-top: 1.2rem; }
 
 /* Doctor profile: quieter, more formal */
 .doctor .doctor__copy .lede {
@@ -1482,6 +1466,7 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
 /* Review cards: a sideways shelf, two to a column, each as long as the review */
 .voices__stage { min-width: 0; }
 .reviews {
+  position: relative; /* keeps hidden helper text inside the scroller */
   display: flex;
   align-items: flex-start;
   gap: 14px;
@@ -1611,7 +1596,7 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
   .bay .pillar, .pillar--end { display: none; }
   .pillar--rail { display: flex; top: 9px; bottom: 9px; }
 
-  .doctor__grid, .team, .voices__grid, .cover__grid, .visit__grid { grid-template-columns: minmax(0, 1fr); }
+  .doctor__grid, .team, .voices__grid, .visit__grid { grid-template-columns: minmax(0, 1fr); }
   .archway { max-width: 360px; margin-inline: 14px; }
   .team { align-items: start; }
 
@@ -1634,9 +1619,7 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
   .brand__mark { width: 32px; height: 32px; }
   .brand__name { font-size: 1.02rem; }
   .menu-toggle__label { display: none; }
-  .services { grid-template-columns: minmax(0, 1fr); }
   .creds div { grid-template-columns: minmax(0, 1fr); gap: 0.2rem; }
-  .team__member img { width: 104px; }
   .hero__actions .btn { width: 100%; justify-content: center; }
   .visit__actions .btn { width: 100%; justify-content: center; }
   .site-footer__links { flex-wrap: wrap; }
@@ -1782,4 +1765,17 @@ h3 { font-size: 1.4rem; line-height: 1.22; }
   .visit__foot { margin-top: 18px; }
   .visit__foot .contact { display: flex; flex-wrap: wrap; gap: 0 2.4rem; }
   .social a { padding: 0.5em 1.05em; }
+}
+
+@media print {
+  .site-header, .menu, .dock, .skip, .tour__controls, .reviews__nav, .map iframe, .care__art, .visit__bg, .painless__feather, .gift { display: none !important; }
+  .js [data-reveal], .js [data-reveal] * { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  body, .doctor, .tour, .visit, .site-footer, .hours { background: #fff !important; color: #000 !important; }
+  .doctor *, .tour *, .visit *, .site-footer * { color: #000 !important; }
+  .hero__inner { min-height: 0; }
+  .reviews, .tour__track { flex-wrap: wrap; overflow: visible; -webkit-mask-image: none; mask-image: none; }
+  section { break-inside: avoid; padding-block: 24px !important; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; word-break: break-all; }
+  .review__more, .sr-only { display: none; }
 }

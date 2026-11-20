@@ -1,6 +1,15 @@
 # Tracy Center for Dentistry
 
-> Painless family and cosmetic dentistry in Tracy, California. Founded in 2006 by Dr. Katherine D. Sanchez, DDS.
+> Painless family and cosmetic dentistry in Tracy, California. Founded in 2006 by Dr. Katherine D. Sanchez, DDS. Call (209) 221-8838 to book. Everything about the practice is on one page.
+
+## Sections of the site
+
+- [Pain-free dentistry](https://www.tracycenterfordentistry.com/#painless): how treatment is kept painless, with no shots for most procedures
+- [Families](https://www.tracycenterfordentistry.com/#families): what children and parents get, including a free year of toothbrushes
+- [Insurance and payment](https://www.tracycenterfordentistry.com/#insurance): accepted plans and ways to pay
+- [Dr. Katherine D. Sanchez](https://www.tracycenterfordentistry.com/#doctor): education, licensure and memberships
+- [Services](https://www.tracycenterfordentistry.com/#care): preventive, restorative and cosmetic treatment
+- [Location and hours](https://www.tracycenterfordentistry.com/#visit): address, map, opening hours and contact details
 
 ## Key facts
 
@@ -38,4 +47,10 @@ All major PPO and indemnity dental plans are accepted, including Delta Dental, A
 
 ## Dr. Katherine D. Sanchez
 
-Dental degree from the Arthur A. Dugoni School of Dentistry, University of the Pacific, San Francisco. Member of the American Dental Association, California Dental Association, San Joaquin County Dental Society and Santa Clara County Dental Society.
+Dental degree from the Arthur A. Dugoni School of Dentistry, University of the Pacific, San Francisco. Licensed by the Dental Board of California. Member of the American Dental Association, California Dental Association, San Joaquin County Dental Society and Santa Clara County Dental Society.
+
+## Elsewhere
+
+- [Google reviews and map](https://www.google.com/maps?cid=6623985831701287111): the practice's Google listing
+- [Yelp](https://www.yelp.com/biz/tracy-center-for-dentistry-tracy-2): the practice's Yelp page
+- [Contact card](https://www.tracycenterfordentistry.com/contact.vcf): phone, address and email as a vCard

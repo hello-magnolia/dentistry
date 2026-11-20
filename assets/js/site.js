@@ -48,9 +48,12 @@
   /* Mobile menu */
   const menu = $('[data-menu]');
   const toggle = $('[data-menu-toggle]');
+  const behindMenu = $$('main, .site-footer, [data-dock]');
   function setMenu(open) {
     menu.hidden = !open;
     toggle.setAttribute('aria-expanded', String(open));
+    // Keep keyboard and screen-reader focus inside the open menu
+    behindMenu.forEach((el) => { el.inert = open; });
     header.classList.toggle('is-open', open);
     document.body.classList.toggle('is-locked', open);
     requestFrame();
@@ -275,7 +278,7 @@
         const link = byId.get(entry.target.id);
         if (link && entry.isIntersecting) {
           navLinks.forEach((a) => a.removeAttribute('aria-current'));
-          link.setAttribute('aria-current', 'true');
+          link.setAttribute('aria-current', 'location');
         }
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
